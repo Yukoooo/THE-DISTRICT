@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="stylesheet" href="../BOOTSTRAP/style.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  <title>Page de contact</title>
+
+
+
+</head>
+
+<body>
+  <!-- NAVBAR-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">
+      <img src="/WEBER/FRONT/STATIQUE/images_the_district/the_district_brand/logo.png" alt="Logo" width="60"
+        height="50" />
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="Acceuil.html">Accueil</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="Catégorie.html">Catégorie</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="Plats.html">Plats</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="Contact.html">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <br />
+  <!-- IMAGE DE FOND-->
+  <div class="search-container">
+    <img src="../images_the_district/bg1.jpeg" alt="Image de fond" class="search-image" />
+    <!-- Formulaire de contact -->
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <form>
+            <!-- Champ Nom et Prénom -->
+            <div class="form-group row text-left">
+              <div class="col-md-6 mb-4">
+                <label for="nom">Nom *</label>
+                <input type="text" class="form-control" id="nom" name="nom" required>
+                <div class="text-danger">*Ce champ est obligatoire</div>
+              </div>
+              <div class="col-md 6">
+                <label for="prenom">Prénom</label>
+                <input type="text" class="form-control" id="prenom" name="prenom">
+              </div>
+            </div>
+
+            <!-- Champ Email et Numéro de téléphone -->
+            <div class="form-group row text-left">
+              <div class="col-md-6 mb-4">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email">
+
+              </div>
+              <div class="col-md-6">
+                <label for="telephone">Numéro de téléphone *</label>
+                <input type="tel" class="form-control" id="telephone" name="telephone" required>
+                <div class="text-danger">*Ce champ est obligatoire</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="votre-demande">Votre demande</label>
+              <textarea class="form-control" id="votre-demande" name="votre-demande"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary float-right">Envoyer</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+
+<div style="height:175px;"></div>
+<footer class="footer mt-0">
+  <div class="container text-center">
+    <div class="">
+      <div class="col-0">
+        <a href="#"
+          ><img
+            class="w-100 object-fit-contain"
+            src="../images_the_district/the_district_brand/linkedin_banner_image_2.png"
+            alt="The district logo pinsterest"
+            height="55"
+        /></a>
+      </div>
+    </div>
+  </div>
+</footer>
+  
+
+
+
+
+
+
+
+
+    <!--LIEN BOOTSTRAP-->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+Ecrire des requêtes d'interrogation de la base de données
+
+Vous devez écrire les requêtes suivantes:
+
+    Afficher la liste des commandes ( la liste doit faire apparaitre la date, les informations du client, le plat et le prix )
+<!--
+SELECT 
+c.date_commande,c.nom_client,c.telephone_client,c.email_client, c.adresse_client,p.libelle AS plat,    p.prix
+FROM commande c
+JOIN plat p ON c.id_plat = p.id
+-->
+    Afficher la liste des plats en spécifiant la catégorie
+<!--
+SELECT 
+ p.libelle AS plat,p.description, p.prix,p.image,c.libelle AS categorie
+FROM plat p
+JOIN categorie c 
+ON p.id_categorie = c.id;
+-->
+    Afficher les catégories et le nombre de plats actifs dans chaque catégorie
+<!--
+SELECT
+c.id AS id_categorie, c.libelle AS categorie,  COUNT(p.id) AS nombre_de_plats_actifs
+FROM categorie c
+LEFT JOIN plat p 
+ON c.id = p.id_categorie 
+AND p.active = 'Yes'
+GROUP BY c.id, c.libelle;
+-->
+    Liste des plats les plus vendus par ordre décroissant
+<!--
+SELECT
+    p.id AS id_plat,
+    p.libelle AS plat,
+    SUM(c.quantite) AS total_vendu
+FROM plat p
+LEFT JOIN commande c ON p.id = c.id_plat
+GROUP BY p.id, p.libelle
+ORDER BY total_vendu DESC;
+-->
+    Le plat le plus rémunérateur
+<!--
+SELECT
+    p.id AS id_plat,
+    p.libelle AS plat,
+    SUM(c.quantite * p.prix) AS revenu_total
+FROM plat p
+LEFT JOIN commande c ON p.id = c.id_plat
+GROUP BY p.id, p.libelle
+ORDER BY revenu_total DESC
+LIMIT 1;
+-->
+    Liste des clients et le chiffre d'affaires généré par client (par ordre décroissant)
+<!--
+    SELECT
+    c.nom_client AS client,
+    SUM(c.quantite * p.prix) AS chiffre_affaires
+FROM commande c
+LEFT JOIN plat p ON c.id_plat = p.id
+GROUP BY c.nom_client
+ORDER BY chiffre_affaires DESC;
+-->
+
+
+
+
+
+
+
+
+
+
+
+                                        Ecrire des requêtes de modification de la base de données
+
+    Ecrivez une requête permettant de supprimer les plats non actif de la base de données
+<!--
+DELETE FROM plat
+WHERE active = 'No';
+-->
+    Ecrivez une requête permettant de supprimer les commandes avec le statut livré
+<!--
+DELETE FROM commande
+WHERE etat = 'Livrée';
+-->
+    Ecrivez un script sql permettant d'ajouter une nouvelle catégorie et un plat dans cette nouvelle catégorie.
+<!--
+INSERT INTO categorie (libelle, image, active)
+VALUES ('Nouvelle Catégorie', 'image.jpg', 'Yes');
+
+SELECT LAST_INSERT_ID(15) INTO @nouvelle_categorie_id;
+
+INSERT INTO plat (libelle, description, prix, image, id_categorie, active)
+VALUES ('Nouveau Plat', 'Description du Nouveau Plat', 10.00, 'plat.jpg', 15, 'Yes');
+-->
+    Ecrivez une requête permettant d'augmenter de 10% le prix des plats de la catégorie 'Pizza'
+<!--
+    UPDATE plat
+SET prix = prix * 1.10
+WHERE id_categorie = (SELECT id FROM categorie WHERE libelle = 'Pizza');
+-->
